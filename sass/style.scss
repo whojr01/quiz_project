@@ -1,0 +1,176 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --change: 345;
+  --base: 345;
+}
+
+header {
+  &.container {
+    max-width: 960px;
+    margin: 2rem 1rem;
+  }
+
+  .errmsg {
+    color: red;
+    font-weight: bold;
+  }
+}
+
+.content {
+  max-width: 960px;
+  margin: 2rem 1rem;
+
+  .question {
+    display: none;
+
+    div {
+      display: flex;
+      padding: 1rem;
+      background-color: lightgray;
+      margin-bottom: 0.1rem;
+    }
+
+    input[type="radio"] {
+      margin-right: 1rem;
+      cursor: pointer;
+    }
+
+    label {
+      display: flex;
+      width: 100%;
+      cursor: pointer;
+
+      & p {
+        flex-grow: 1;
+      }
+    }
+  }
+
+  .show-active {
+    display: block;
+  }
+}
+
+.results {
+  width: min(100% - 2rem, 60rem);
+  margin: 2rem auto;
+  display: none;
+
+  & .answer::before {
+    content: "✔️";
+    padding-right: 1rem;
+  }
+
+  & .answer {
+    font-weight: bold;
+    color: #13aa52;
+  }
+
+  & .incorrect::before {
+    content: "❌";
+    padding-right: 1rem;
+  }
+
+  & .incorrect {
+    color: darkred;
+    font-weight: bold;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .grade {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  .outer {
+    height: 120px;
+    width: 120px;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: -5px -5px 20px -5px rgba(0, 0, 0, 0.7);
+    border: 1px solid #5a5a5a;
+  }
+
+  .inner {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: inset -2px -2px 5px -1px rgba(0, 0, 0, 0.7);
+    border: 1px solid #c3c3c3;
+  }
+
+  #number {
+    font-weight: 600;
+    color: #555;
+    font-size: 30px;
+  }
+
+  circle {
+    fill: none;
+    stroke: url(#GradientColor);
+    stroke-width: 10px;
+    stroke-dasharray: var(--base);
+    stroke-dashoffset: var(--base);
+    animation: anim 2s linear forwards;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+  }
+
+  @keyframes anim {
+    100% {
+      stroke-dashoffset: var(--change);
+    }
+  }
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.show-active {
+  display: block;
+}
+
+.controls {
+  margin-top: 3rem;
+
+  .btn {
+    border-radius: 4px;
+    padding: 0.625rem 1.562rem;
+    cursor: pointer;
+    display: none;
+  }
+
+  .btn-next,
+  .btn-back {
+    background-color: #13aa52;
+    border: 1px solid #13aa52;
+    color: #fff;
+  }
+
+  .submit {
+    background-color: #3282cd;
+    border: 1px solid #3282cd;
+    color: #fff;
+    margin-left: 2rem;
+  }
+
+  .show-active {
+    display: inline;
+  }
+}

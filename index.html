@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>eCommerce Quiz</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="container">
+      <h1>eCommerce Quiz</h1>
+      <h2 class="subtitle"></h2>
+      <h3 class="errmsg"></h3>
+    </header>
+
+    <main class="content">
+      <section class="controls">
+        <button class="btn btn-back">Back</button>
+        <button class="btn btn-next show-active">Next</button>
+        <button class="btn submit">Submit</button>
+        <span class="timer"></span>
+      </section>
+    </main>
+
+    <footer>
+      <section class="results">
+        <div class="container">
+          <div class="grade">
+            <div class="outer">
+              <div class="inner">
+                <div id="number"></div>
+              </div>
+            </div>
+
+            <svg width="120px" height="120px" viewBox="0 0 120 120">
+              <defs>
+                <linearGradient id="GradientColor" x1="0%" y1="0%" x2="100%" y2="0%" gradientTransform="rotate(90)">
+                  <stop offset="0%" stop-color="#11931b" />
+                  <stop offset="25%" stop-color="#11931b" />
+                  <stop offset="67%" stop-color="#eb1607" />
+                </linearGradient>
+              </defs>
+              <circle cx="60" cy="60" r="55" stroke-linecap="round" />
+            </svg>
+          </div>
+        </div>
+      </section>
+    </footer>
+
+    <script src="./js/question.js"></script>
+  </body>
+</html>
